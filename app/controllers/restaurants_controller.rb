@@ -10,4 +10,11 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
   end
+
+  def create(attributes)
+    @restaurant = Restaurant.new(attributes)
+    @restaurant.save
+    redirect_to restaurants_path
+  end
+
 end
