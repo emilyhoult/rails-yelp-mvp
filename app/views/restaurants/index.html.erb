@@ -1,11 +1,15 @@
-<h1>Here are the restaurants</h1>
+<br>
+<h1 class="mx-auto" style="width: 1000px;">🍦 🍣 🥗 🍔 🍟 🍕 All Restaurants 🍕 🍟 🍔 🥗 🍣 🍦</h1>
+<br>
+<div class="mx-auto" style="width: 500px;">
+  <ul class="list-unstyled">
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <h4><%= restaurant.name %> <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%></h4>
+      </li>
+      <br>
+    <% end %>
+  </ul>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li>
-      <%= link_to restaurant.name, restaurant_path(restaurant) %>
-    </li>
-  <% end %>
-</ul>
-
-<h4> <%= link_to "Add a new restaurant", new_restaurant_path %></h4>
+  <h4> <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-success" %></h4>
+</div>
